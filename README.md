@@ -35,7 +35,13 @@ For now, this task has no options and assumes you're using a ```package.json``` 
 }
 ```
 
-The name of the module will be the key, and the full module path is the value.
+The name of the module will be the key, and the full module path is the value. Now, anywhere in your code, you can just require the alias:
+
+```javascript
+var utils   = require('utils');
+var errors  = require('errors');
+var m       = require('middleware');
+```
 
 ## Contributing
 
