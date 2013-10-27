@@ -1,0 +1,47 @@
+{
+  "name": "grunt-named-modules",
+  "description": "Allows you to specify aliases for your module paths",
+  "version": "1.0.0",
+  "homepage": "https://github.com/jrf0110/grunt-named-modules",
+  "author": {
+    "name": "John Fawcett",
+    "email": "jrf0110@gmail.com",
+    "url": "http://j0.hn"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jrf0110/grunt-named-modules.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jrf0110/grunt-named-modules/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jrf0110/grunt-named-modules/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt": "~0.4.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "namedModules": {
+    "testModule1": "test/test-module-1.js",
+    "testModule2": "test/test-module-2.js"
+  }
+}
