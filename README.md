@@ -26,6 +26,9 @@ For now, this task has no options and assumes you're using a ```package.json``` 
 
 ```json
 {
+  "scripts": {
+    "postInstall": "grunt namedModules"
+  },
   ...
   "namedModules": {
     "utils": "lib/utils.js",
@@ -41,6 +44,20 @@ The name of the module will be the key, and the full module path is the value. N
 var utils   = require('utils');
 var errors  = require('errors');
 var m       = require('middleware');
+```
+
+I would just put a watch on my ```package.json```:
+
+```javascript
+watch: {
+  namedModules: {
+    files: ['package.json'],
+    tasks: ['namedModules'],
+    options: {
+      spawn: false,
+    }
+  }
+}
 ```
 
 ## Contributing
