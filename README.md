@@ -27,7 +27,7 @@ For now, this task has no options and assumes you're using a ```package.json``` 
 ```json
 {
   "scripts": {
-    "postInstall": "grunt namedModules"
+    "postinstall": "grunt namedModules"
   },
   ...
   "namedModules": {
