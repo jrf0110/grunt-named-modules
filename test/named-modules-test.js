@@ -30,6 +30,7 @@ exports.require_grouper = {
   default_options: function(test) {
     test.equal( require('testModule1'), 'test1' );
     test.equal( require('testModule2'), 'test2' );
+    test.equal( require('testDir'),     'test3' );
     test.done();
   }
 };

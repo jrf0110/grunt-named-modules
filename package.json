@@ -41,7 +41,8 @@
     "gruntplugin"
   ],
   "namedModules": {
-    "testModule1": "test/test-module-1.js",
-    "testModule2": "test/test-module-2.js"
+    "testModule1":  "test/test-module-1.js",
+    "testModule2":  "test/test-module-2.js",
+    "testDir":      "test/dir1"
   }
 }

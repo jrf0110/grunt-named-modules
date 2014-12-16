@@ -41,7 +41,8 @@ module.exports = function( grunt ){
     var aliasModule = function( name ){
       var dir   = path.join( process.cwd(), 'node_modules', name );
       var from  = path.join( process.cwd(), modules[ name ] );
-      var to    = path.join( dir, 'index.js' );
+      var isDir = fs.statSync( from ).isDirectory();
+      var to    =  isDir ? dir : path.join( dir, 'index.js' );
 
       // Ensure it isn't already a node_module
       if ( fs.existsSync( path.join( dir, 'package.json' ) ) ){
@@ -51,12 +52,11 @@ module.exports = function( grunt ){
       // Clear out previous
       if ( fs.existsSync( dir ) ){
         fs.unlinkSync( to );
-        fs.rmdirSync( dir );
+        if ( !isDir ) fs.rmdirSync( dir );
       }
 
-      fs.mkdirSync( dir );
-
-      fs.symlinkSync( from, to );
+      if ( !isDir ) fs.mkdirSync( dir );
+      fs.symlinkSync( from, to, isDir ? 'dir' : 'file' );
 
       stats.numAliased.value++;
     };
