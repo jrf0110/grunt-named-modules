@@ -24,7 +24,7 @@ grunt.loadNpmTasks('grunt-named-modules');
 
 For now, this task has no options and assumes you're using a ```package.json``` file. In your ```package.json``` file, add a new directive called ```namedModules```:
 
-```json
+```javascript
 {
   "scripts": {
     "postinstall": "grunt namedModules"
@@ -33,7 +33,8 @@ For now, this task has no options and assumes you're using a ```package.json``` 
   "namedModules": {
     "utils": "lib/utils.js",
     "errors": "lib/errors.js",
-    "middleware": "lib/middleware/index.js"
+    "middleware": "lib/middleware/index.js",
+    "configs": "configs/" // <-- alias a directory
   }
 }
 ```
@@ -44,6 +45,7 @@ The name of the module will be the key, and the full module path is the value. N
 var utils   = require('utils');
 var errors  = require('errors');
 var m       = require('middleware');
+var aConf   = require('configs/a');
 ```
 
 I would just put a watch on my ```package.json```:
@@ -66,4 +68,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
-1.0.0 - The initial release!
+1.0.2 - Added directory support
+1.0.1 - The initial release!
