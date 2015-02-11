@@ -1,7 +1,7 @@
 {
   "name": "grunt-named-modules",
   "description": "Allows you to specify aliases for your module paths",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.com/jrf0110/grunt-named-modules",
   "author": {
     "name": "John Fawcett",
